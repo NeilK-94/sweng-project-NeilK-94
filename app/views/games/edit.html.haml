@@ -1,0 +1,19 @@
+-# edit.html.haml using partial
+
+%h2 Edit Existing Game
+
+= form_tag game_path(@game), :method => :put do
+
+  = label :game, :title, 'Title'
+  = text_field :game, 'title'
+
+  = label :game, :genre, 'Genre'
+  = text_field :game, 'genre'
+
+  = label :game, :score, 'Score'
+  = number_field :game, :score
+
+  = label :game, :developer, 'Developer'
+  = text_field :game, 'developer'
+
+  = submit_tag 'Update Game Info', :class => 'btn btn-primary'

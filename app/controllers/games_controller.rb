@@ -25,6 +25,19 @@ class GamesController < ApplicationController
     redirect_to games_path
   end
 
+  # The edit action handles rendering the edit form
+  # The update action will be the method that updates the database record itself. Just like 'new' and 'create'
+  def edit
+    @game = Game.find params[:id]
+  end
+
+  def update
+    @game = Game.find params[:id]
+    @game.update_attributes!(game_params)
+    flash[:notice] = "#{@game.title} was successfully updated."
+    redirect_to game_path(@game)
+  end
+
   def new
     # default: render 'new' template
   end
