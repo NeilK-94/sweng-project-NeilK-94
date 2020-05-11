@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   get 'games/index'
 
+  get 'games/new'
+
+  # Set index as the root
   root 'games#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

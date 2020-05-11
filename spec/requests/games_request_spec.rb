@@ -9,4 +9,11 @@ RSpec.describe "Games", type: :request do
     end
   end
 
+  describe "GET /new" do
+    it "returns http success" do
+      get "/games/new"
+      expect(response).to have_http_status(:success)
+    end
+  end
+
 end
