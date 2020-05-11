@@ -18,6 +18,13 @@ class GamesController < ApplicationController
     # will render app/views/games/show.html.haml by default
   end
 
+  def destroy
+    @game = Game.find(params[:id])
+    @game.destroy
+    flash[:notice] = "'#{@game.title}' has been deleted."
+    redirect_to games_path
+  end
+
   def new
     # default: render 'new' template
   end
