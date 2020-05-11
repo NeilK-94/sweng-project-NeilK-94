@@ -1,0 +1,14 @@
+-#  This file is app/views/games/index.html.haml
+%h2 All Video Games
+
+%table#games.table.table-striped.col-md-12
+  %tbody
+    - @games.each do |game|
+      %tr
+        %td= game.title
+        %td= game.genre
+        %td= game.score
+        %td= game.developer
+        /%td= link_to "More about #{movie.title}", movie_path(movie)
+
+/= link_to 'Add new movie', new_movie_path
