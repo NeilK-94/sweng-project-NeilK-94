@@ -1,7 +1,9 @@
 class GamesController < ApplicationController
   
   def game_params
-    params.require(:game).permit(:title, :genre, :score, :developer)
+    #   Removed .require to get it to work initially.
+    #   Now game data isn't persisted to table after created
+    params.require(:game).permit(:title, :genre, :score, :developer)   
   end
 
   def index
@@ -17,8 +19,12 @@ class GamesController < ApplicationController
   end
 
   def new
+    # default: render 'new' template
+  end
+
+  def create
     @game = Game.create!(game_params)
-    flash[:notice] = "#{@game.title} was successfully created."
+    flash[:notice] = "'#{@game.title}' was successfully added."
     redirect_to games_path
   end
 end

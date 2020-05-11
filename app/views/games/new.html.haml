@@ -1,2 +1,17 @@
-<h1>Games#new</h1>
-<p>Find me in app/views/games/new.html.erb</p>
+%h2 Add A New Game
+
+= form_tag games_path do
+
+  = label :game, :title, 'Title'
+  = text_field :game, 'title'
+
+  = label :game, :genre, 'Genre'
+  = text_field :game, 'genre'
+
+  = label :game, :score, 'Score'
+  = number_field :game, :score
+
+  = label :game, :developer, 'Developer'
+  = text_field :game, 'developer'
+
+  = submit_tag 'Save Changes', :class => 'btn btn-primary'
