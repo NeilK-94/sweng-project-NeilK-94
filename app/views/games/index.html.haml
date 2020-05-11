@@ -2,6 +2,12 @@
 %h2 All Video Games
 
 %table#games.table.table-striped.col-md-12
+  %thead
+    %tr
+      %th Title
+      %th Genre
+      %th Score
+      %th Developer
   %tbody
     - @games.each do |game|
       %tr
