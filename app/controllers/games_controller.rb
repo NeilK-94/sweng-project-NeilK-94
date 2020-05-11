@@ -47,4 +47,12 @@ class GamesController < ApplicationController
     flash[:notice] = "'#{@game.title}' was successfully added."
     redirect_to games_path
   end
+
+  def search_developers
+    @game, @games, error = Game.find_with_same_developer(params[:id])
+    if error
+      flash[:notice] = "'#{@game.title}' has no developer info"
+      redirect_to games_path() and return
+    end
+  end
 end
