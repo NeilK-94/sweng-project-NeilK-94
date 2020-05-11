@@ -49,10 +49,16 @@ class GamesController < ApplicationController
   end
 
   def search_developers
-    @game, @games, error = Game.find_with_same_developer(params[:id])
-    if error
-      flash[:notice] = "'#{@game.title}' has no developer info"
-      redirect_to games_path() and return
+    @game = Game.find(params[:id])
+    # Find developer of current game
+    @current_game_developer = @game.developer
+    if @current_game_developer.nil? or @current_game_developer.empty?
+      # If current game has no developer, flash warning and redirect to games index page
+      flash[:warning] = "'#{@game.title}' has no developer info."
+      redirect_to games_path
+    else
+      # Else find all games with the current game developer
+      @games_to_display = Game.find_with_same_developer(@current_game_developer)
     end
   end
 end

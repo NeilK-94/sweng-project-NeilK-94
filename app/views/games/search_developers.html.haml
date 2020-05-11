@@ -1,0 +1,17 @@
+%h1 All games developed by: #{@current_game_developer}
+
+%table#games
+  %thead
+    %tr
+      %th Title
+      %th Genre
+      %th Score
+  %tbody
+    - @games_to_display.each do |game|
+      %tr
+        %td= game.title 
+        %td= game.genre
+        %td= game.score
+        %td= link_to "More about #{game.title}", game_path(game)
+
+= link_to 'Back to game list', games_path
