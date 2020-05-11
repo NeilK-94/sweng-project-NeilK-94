@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     # Set index as the root
     root 'games#index'
 
+    get '/games/:id/developer', to: 'games#search_developers', as: 'search_developers'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

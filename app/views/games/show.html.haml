@@ -1,0 +1,22 @@
+-# in app/views/games/show.html.haml
+
+%h3 Details about #{@game.title}
+
+%ul#details
+  %li
+    Developer:
+    = @game.developer
+  %li
+    Score:
+    = @game.score
+  %li
+    Genre:
+    = @game.genre
+
+
+= link_to 'Edit', edit_game_path(@game)
+= button_to 'Delete', game_path(@game), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-primary'
+= link_to 'Find Games With Same Developer', search_developers_path(@game)
+%br
+= link_to 'Back to all games', games_path
+
