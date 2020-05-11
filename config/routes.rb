@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  get 'games/index'
+    resources :games
 
-  get 'games/new'
+    get 'games/index'
+    get 'games/new'
 
-  # Set index as the root
-  root 'games#index'
+    # Set index as the root
+    root 'games#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
