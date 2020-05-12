@@ -1,4 +1,7 @@
+#   Create test database
 Given("the following games exist:") do |table|
-  # table is a Cucumber::MultilineArgument::DataTable
-  pending # Write code here that turns the phrase above into concrete actions
+  table.hashes.each do |game|
+    Game.create!(:title => game['title'], :genre => game['genre'], :score => game['score'], :developer => game['developer'])
+  end
 end
+

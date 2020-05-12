@@ -16,7 +16,15 @@ module NavigationHelpers
     when /^the home\s?page$/
       '/'
   
-    
+    # Add 'show' page
+    when /^the details page for "(.*)"$/
+        game_to_view = Game.find_by_title($1)
+        game_path(game_to_view)
+
+    # Add Similar Games page
+    when /^the Similar Games page for "(.*)"$/
+        game_to_find = Game.find_by_title($1)
+        search_developers_path(game_to_find)
     
       # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
