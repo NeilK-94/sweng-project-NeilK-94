@@ -1,106 +1,116 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/workspace/sweng-project-NeilK-94/app/models/game.rb": {
+      "/workspace/sweng-project-NeilK-94/app/controllers/application_controller.rb": {
         "lines": [
-          1,
+          0,
           null,
-          1,
-          1,
           null,
-          null
-        ]
+          0,
+          0
+        ],
+        "branches": {
+        }
       },
       "/workspace/sweng-project-NeilK-94/app/controllers/games_controller.rb": {
         "lines": [
-          1,
-          null,
-          1,
-          null,
+          0,
           null,
           0,
           null,
           null,
-          1,
-          null,
+          0,
+          0,
           null,
           0,
           null,
           null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
           0,
+          0,
+          null,
           0,
           0,
           0,
           null,
-          null,
-          null,
-          null,
-          1,
           0,
           null,
-          null,
-          1,
+          0,
+          0,
           0,
           0,
           0,
           0,
           null,
           null,
-          1,
           null,
-          null,
-          null,
-          1,
           0,
           0,
           0,
           null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
-          1,
-          1,
+          0,
           null,
-          1,
-          1,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
           0,
           0,
           null,
+          0,
+          0,
           null,
-          1,
+          0,
+          0,
+          0,
           null,
-          null,
-          null
-        ]
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       },
-      "/workspace/sweng-project-NeilK-94/app/controllers/application_controller.rb": {
+      "/workspace/sweng-project-NeilK-94/app/models/game.rb": {
         "lines": [
-          1,
+          0,
           null,
-          null,
-          1,
-          null
-        ]
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       },
       "/workspace/sweng-project-NeilK-94/app/helpers/application_helper.rb": {
         "lines": [
-          1,
-          null
-        ]
+          0,
+          0
+        ],
+        "branches": {
+        }
       },
       "/workspace/sweng-project-NeilK-94/app/helpers/games_helper.rb": {
         "lines": [
-          1,
-          null
-        ]
+          0,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1589295759
+    "timestamp": 1589309324
   }
 }

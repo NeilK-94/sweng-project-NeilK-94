@@ -14,17 +14,23 @@ module NavigationHelpers
     case page_name
 
     when /^the home\s?page$/
-      '/'
+      '/games'
   
-    # Add 'show' page
+    # Add 'show' page mapping
     when /^the details page for "(.*)"$/
         game_to_view = Game.find_by_title($1)
         game_path(game_to_view)
 
-    # Add Similar Games page
+    # Add Similar Games page mapping
     when /^the Similar Games page for "(.*)"$/
         game_to_find = Game.find_by_title($1)
         search_developers_path(game_to_find)
+
+    # Add edit page mapping
+    when /^the edit page for "(.*)"$/
+      # $1 is name of game to edit
+      game_to_edit = Game.find_by_title($1)
+      edit_game_path(game_to_edit)
     
       # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

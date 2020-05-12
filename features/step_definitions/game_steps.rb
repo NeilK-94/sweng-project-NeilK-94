@@ -5,3 +5,7 @@ Given("the following games exist:") do |table|
   end
 end
 
+Then("the developer of {string} should be {string}") do |game, dev|
+  assert (Game.find_by_title(game).developer == dev)
+end
+
