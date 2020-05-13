@@ -16,7 +16,7 @@ Scenario: add developer to existing game
   When I go to the edit page for "Halo 3"
   And  I fill in "Developer" with "Bungie"
   And  I press "Update Game Info"
-  Then the developer of "Halo 3" should be "Bungie"
+  Then I should see "Bungie"
 
 Scenario: find game with same developer (happy path)
   Given I am on the details page for "GTA 4"
