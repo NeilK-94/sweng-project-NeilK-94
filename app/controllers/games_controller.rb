@@ -9,7 +9,20 @@ class GamesController < ApplicationController
   def index
     #   Just display all the games
     #   Will add to this for ordering etc.
-    @games = Game.all
+    # @games = Game.all
+    sort = params[:sort] || session[:sort]
+    case sort
+    when 'title'
+      ordering,@title_header = {:title => :asc}, 'bg-warning hilite'
+    when 'score'
+      ordering,@score_header = {:score => :desc}, 'bg-warning hilite'
+    end
+
+    if params[:sort] != session[:sort]
+      session[:sort] = sort
+      redirect_to :sort => sort and return
+    end
+    @games = Game.order(ordering)
   end
 
   def show

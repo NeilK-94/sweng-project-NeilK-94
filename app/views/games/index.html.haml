@@ -3,12 +3,16 @@
 
 = link_to 'Add Game', new_game_path
 
+= form_tag games_path, :method => :get, :id => 'ratings_form' do
+  = hidden_field_tag "title_sort", true if @title_header
+  = hidden_field_tag ":score_sort", true if @score_header
+
 %table#games.table.table-hover.table-striped.col-md-14
   %thead
     %tr
-      %th Title
+      %th{:class => @title_header}= link_to 'Game Title', games_path(:sort => 'title'), :id => 'title_header'
       %th Genre
-      %th Score
+      %th{:class => @score_header}= link_to 'Score', games_path(:sort => 'score'), :id => 'score_header'
       %th Developer
       %th More Info
   %tbody
