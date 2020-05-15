@@ -31,7 +31,7 @@ Scenario: all genres selected
   And I press "genres_submit"
   Then I should see all the games
 
-#   Table wont seem to allow 0 records to be displayed, need to fix that before testing for it
+#   Table won't seem to allow 0 records to be displayed, need to fix that before testing for it
 # Scenario: no genres selected
 #   When I uncheck the following genres: Action, Open-World, Strategy, Sports, MMO
 #   And I press "genres_submit"
