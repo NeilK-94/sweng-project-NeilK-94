@@ -3,9 +3,14 @@
 
 = link_to 'Add Game', new_game_path
 
-= form_tag games_path, :method => :get, :id => 'ratings_form' do
+= form_tag games_path, :method => :get, :id => 'genres_form' do
   = hidden_field_tag "title_sort", true if @title_header
   = hidden_field_tag ":score_sort", true if @score_header
+  Include:
+  - @all_genres.each do |genre|
+    = genre
+    = check_box_tag "genres[#{genre}]", 1, @selected_genres.include?(genre), :id => "genres_#{genre}"
+  = submit_tag 'Refresh', :id => 'genres_submit', :class => 'btn btn-primary'
 
 %table#games.table.table-hover.table-striped.col-md-14
   %thead

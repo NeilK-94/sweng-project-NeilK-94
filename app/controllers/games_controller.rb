@@ -1,14 +1,10 @@
 class GamesController < ApplicationController
   
   def game_params
-    #   Removed .require to get it to work initially.
-    #   Now game data isn't persisted to table after created
     params.require(:game).permit(:title, :genre, :score, :developer)   
   end
 
   def index
-    #   Just display all the games
-    #   Will add to this for ordering etc.
     # @games = Game.all
     sort = params[:sort] || session[:sort]
     case sort
@@ -18,11 +14,19 @@ class GamesController < ApplicationController
       ordering,@score_header = {:score => :desc}, 'bg-warning hilite'
     end
 
-    if params[:sort] != session[:sort]
-      session[:sort] = sort
-      redirect_to :sort => sort and return
+    @all_genres = Game.all_genres
+    @selected_genres = params[:genres] || session[:genres] || {}
+
+    if @selected_genres == {}
+      @selected_genres = Hash[@all_genres.map {|genre| [genre, genre]}]
     end
-    @games = Game.order(ordering)
+
+    if params[:sort] != session[:sort] or params[:genres] != session[:genres]
+      session[:sort] = sort
+      session[:genres] = @selected_genres
+      redirect_to :sort => sort, :genres => @selected_genres and return
+    end
+    @games = Game.where(genre: @selected_genres.keys).order(ordering)
   end
 
   def show
