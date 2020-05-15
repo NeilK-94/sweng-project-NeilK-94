@@ -1,13 +1,19 @@
 Rails.application.routes.draw do
     resources :games
 
-    get 'games/index'
+    get 'games/index', to: 'games#index', as: 'index'
     get 'games/new'
+    get 'games/show'
+    get 'games/edit'
 
     # Set index as the root
     root 'games#index'
+    #   Get a "cant modify frozen array" error whenever I try to add routes for rspec controller testing..
+    #put 'games/:id', to 'games#edit'
+    #get 'games/:id' => 'games#show', as 'show'
 
     get '/games/:id/developer', to: 'games#search_developers', as: 'search_developers'
+    get '/games/:search_term/developer', to: 'games#search_dev', as: 'search_dev'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

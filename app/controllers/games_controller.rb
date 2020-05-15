@@ -48,6 +48,9 @@ class GamesController < ApplicationController
     redirect_to games_path
   end
 
+  def search_dev
+    Game.find_with_same_developer(params[:search_params])
+  end
   def search_developers
     @game = Game.find(params[:id])
     # Find developer of current game
