@@ -2,6 +2,14 @@
 # Software Engineering Project 2020
 ### BSc (Hons) Computing in Software Development
 
+#### Project Brief
+This repository contains my submission for the alternative assessment in lieu of a written exam for the module 'Software Engineering'. It is a video games database that allows users to perform basic CRUD functionality as well as sort, filter and search games by developer.
+Two testing frameworks are used to test the application:
+##### RSpec
+RSpec unit tests check some basic controller and model logic for form validation and rendering the correct templates. I had testing the additional feature due to my routes not being implemented correctly.
+ ##### Cucumber
+ My Cucumber tests verify the **search by developer** feature works correctly. It tests for both the happy and sad paths. As my RSpec testing was quite light I added two more features to test the sorting of games and the filtering of games by genre. 
+
 ## Introduction
 This project is the alternative assessment which will replace the 50% summer exam in Software Engineering which has been cancelled due to the pandemic. The project is worth 50%, and will address the module learning outcomes by focusing on the following topics:
 - Software as a Service / Cloud Computing 
