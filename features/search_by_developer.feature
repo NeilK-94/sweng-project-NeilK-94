@@ -12,6 +12,8 @@ Background: games in database
   | GTA 4               | Open World | 85    | Rockstar Games |
   | Red Dead Redemption | Open World | 80    | Rockstar Games |
 
+  And I am on the home page
+
 Scenario: add developer to existing game
   When I go to the edit page for "Halo 3"
   And  I fill in "Developer" with "Bungie"
